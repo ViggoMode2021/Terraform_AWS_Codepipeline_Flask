@@ -1,9 +1,10 @@
-from flask import Flask
+from flask import Flask, render_template
+
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "ok, (NOT KSMUM) I just designed a new space car zooooooooooooted check it out yall promo code melon"
+    return render_template("index.html")
 
 @app.route("/services/service-2")
 def hello():
@@ -16,4 +17,4 @@ def status():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int("80"), debug=True)
+    app.run(host="0.0.0.0", port=int("80"), debug=False)
